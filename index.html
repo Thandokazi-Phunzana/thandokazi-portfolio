@@ -1,139 +1,886 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thandokazi Nomvelo Phunzana | Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Thandokazi Nomvelo Phunzana - Software Developer, Computer Science Graduate">
+  <title>Thandokazi Nomvelo Phunzana | Software Developer Portfolio</title>
+  <!-- Google Fonts + Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-body {
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  margin: 0;
-  background: linear-gradient(120deg, #eef2ff, #f0f9ff);
-  color: #333;
-}
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0A0F1E;
+      color: #E8EDFF;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
 
-header {
-  background: linear-gradient(135deg, #4f46e5, #06b6d4);
-  color: white;
-  text-align: center;
-  padding: 50px 20px;
-}
+    /* dark blue palette */
+    :root {
+      --deep-blue: #1E2A5E;
+      --medium-blue: #2A3A6B;
+      --light-blue: #3A4C8C;
+      --accent-blue: #4A6FA5;
+      --bright-blue: #5D8BC2;
+      --navy-dark: #0F172A;
+      --slate: #1E293B;
+      --silver: #A0B3D9;
+    }
 
-header h1 { margin: 0; font-size: 2.5rem; }
-header p { margin: 8px 0; }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--slate);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--bright-blue);
+      border-radius: 20px;
+    }
 
-section {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
+    /* container - centered */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-h2 {
-  color: #4f46e5;
-  border-bottom: 3px solid #4f46e5;
-  padding-bottom: 8px;
-}
+    /* header */
+    header {
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(93, 139, 194, 0.2);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--bright-blue);
+      letter-spacing: -0.3px;
+    }
+    .logo span {
+      color: var(--silver);
+      font-weight: 500;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--silver);
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      color: var(--bright-blue);
+    }
+    .btn-download-nav {
+      background: var(--bright-blue);
+      color: white !important;
+      padding: 0.5rem 1.3rem;
+      border-radius: 40px;
+      transition: all 0.2s;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-download-nav:hover {
+      background: var(--accent-blue);
+      transform: scale(1.02);
+    }
 
-.card {
-  background: white;
-  padding: 25px;
-  margin: 20px 0;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  transition: 0.3s;
-}
+    /* sections */
+    section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid rgba(93, 139, 194, 0.15);
+    }
+    section:last-of-type {
+      border-bottom: none;
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+      color: var(--bright-blue);
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 55px;
+      height: 3px;
+      background: var(--bright-blue);
+      border-radius: 3px;
+    }
 
-.card:hover { transform: translateY(-5px); }
+    /* hero */
+    .hero {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .hero-content {
+      flex: 1.2;
+    }
+    .hero-badge {
+      background: var(--bright-blue);
+      color: white;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+    .hero-content h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+      color: #FFFFFF;
+    }
+    .gradient-name {
+      color: var(--bright-blue);
+      border-bottom: 3px solid var(--bright-blue);
+      display: inline-block;
+    }
+    .hero-content p {
+      font-size: 1.05rem;
+      color: var(--silver);
+      max-width: 520px;
+      margin-bottom: 1.8rem;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--bright-blue);
+      color: white;
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--accent-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(93, 139, 194, 0.3);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--bright-blue);
+      color: var(--bright-blue);
+      padding: 0.75rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: var(--bright-blue);
+      color: white;
+    }
+    .hero-image {
+      flex: 0.6;
+      text-align: center;
+    }
+    .avatar-circle {
+      background: linear-gradient(135deg, var(--deep-blue), var(--medium-blue));
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3);
+      border: 3px solid var(--bright-blue);
+    }
+    .avatar-circle i {
+      font-size: 5.5rem;
+      color: var(--bright-blue);
+    }
 
-a {
-  color: #06b6d4;
-  font-weight: bold;
-  text-decoration: none;
-}
+    /* about */
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+    .about-text {
+      flex: 1.4;
+    }
+    .about-text p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: var(--silver);
+    }
+    .info-bubbles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+    .info-bubble {
+      background: var(--slate);
+      padding: 0.35rem 1.1rem;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--bright-blue);
+    }
+    .info-bubble i {
+      margin-right: 6px;
+      color: var(--bright-blue);
+    }
+    .stats-mini {
+      flex: 0.8;
+      background: var(--slate);
+      padding: 1.3rem;
+      border-radius: 24px;
+      border: 1px solid var(--medium-blue);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .stat-item {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--bright-blue);
+    }
 
-footer {
-  background: #4f46e5;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 50px;
-}
-</style>
+    /* skills cards */
+    .skills-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .skill-card {
+      flex: 1;
+      background: var(--slate);
+      border-radius: 24px;
+      padding: 1.4rem;
+      border: 1px solid var(--medium-blue);
+      transition: 0.2s;
+    }
+    .skill-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: var(--bright-blue);
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+    .skill-tag {
+      background: var(--deep-blue);
+      padding: 0.35rem 1rem;
+      border-radius: 40px;
+      font-weight: 500;
+      font-size: 0.8rem;
+      transition: 0.2s;
+      color: var(--silver);
+    }
+    .skill-tag:hover {
+      background: var(--bright-blue);
+      color: white;
+    }
+
+    /* experience & education sections - separate */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .timeline-item {
+      background: var(--slate);
+      border-radius: 20px;
+      padding: 1.1rem 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border: 1px solid var(--medium-blue);
+      border-left: 4px solid var(--bright-blue);
+    }
+    .timeline-item h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .timeline-date {
+      color: var(--bright-blue);
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin: 0.2rem 0 0.5rem;
+    }
+    .timeline-institution {
+      color: var(--silver);
+      font-size: 0.85rem;
+      margin-bottom: 0.3rem;
+    }
+    .timeline-item ul {
+      margin-top: 0.5rem;
+      margin-left: 1.5rem;
+      color: var(--silver);
+    }
+
+    /* projects grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.8rem;
+    }
+    .project-card {
+      background: var(--slate);
+      border-radius: 24px;
+      overflow: hidden;
+      transition: 0.25s ease;
+      border: 1px solid var(--medium-blue);
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 25px -10px rgba(93, 139, 194, 0.3);
+      border-color: var(--bright-blue);
+    }
+    .project-icon {
+      background: var(--deep-blue);
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      color: var(--bright-blue);
+    }
+    .project-info {
+      padding: 1.3rem;
+    }
+    .project-info h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+      color: #FFFFFF;
+    }
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.7rem 0;
+    }
+    .project-tech span {
+      background: var(--deep-blue);
+      padding: 0.2rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--bright-blue);
+    }
+    .project-links {
+      margin-top: 0.8rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .project-links a {
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--bright-blue);
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .project-links a:hover {
+      color: var(--silver);
+      gap: 8px;
+    }
+
+    /* achievements */
+    .achievement-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      background: var(--slate);
+      border-radius: 28px;
+      padding: 1.8rem;
+      border: 1px solid var(--medium-blue);
+    }
+    .achievement-box {
+      flex: 1;
+    }
+    .achievement-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .achievement-box li {
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--silver);
+    }
+    .achievement-box i {
+      color: var(--bright-blue);
+      width: 22px;
+    }
+
+    /* CV download button section */
+    .cv-download-section {
+      text-align: center;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .btn-download-cv {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bright-blue);
+      color: white;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(93, 139, 194, 0.3);
+      border: none;
+      cursor: pointer;
+    }
+    .btn-download-cv:hover {
+      background: var(--accent-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(93, 139, 194, 0.4);
+    }
+
+    /* contact */
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      background: var(--slate);
+      border-radius: 32px;
+      padding: 2rem;
+      border: 1px solid var(--medium-blue);
+    }
+    .contact-info {
+      flex: 1;
+    }
+    .contact-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--bright-blue);
+    }
+    .contact-info p {
+      color: var(--silver);
+    }
+    .contact-details p {
+      margin: 0.9rem 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      word-break: break-word;
+      font-size: 0.9rem;
+    }
+    .contact-details i {
+      width: 26px;
+      color: var(--bright-blue);
+      font-size: 1rem;
+    }
+    .contact-details a {
+      color: var(--silver);
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .contact-details a:hover {
+      color: var(--bright-blue);
+    }
+    .social-links {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1.2rem;
+    }
+    .social-links a {
+      background: var(--deep-blue);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--bright-blue);
+      font-size: 1.2rem;
+      transition: 0.2s;
+    }
+    .social-links a:hover {
+      background: var(--bright-blue);
+      color: white;
+      transform: translateY(-3px);
+    }
+    .contact-form {
+      flex: 1;
+      background: var(--navy-dark);
+      border-radius: 28px;
+      padding: 1.4rem;
+    }
+    .contact-form h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--bright-blue);
+      text-align: center;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.7rem 1rem;
+      border: 1px solid var(--medium-blue);
+      border-radius: 28px;
+      font-family: 'Inter', sans-serif;
+      background: var(--slate);
+      color: white;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--bright-blue);
+      box-shadow: 0 0 0 2px rgba(93, 139, 194, 0.2);
+    }
+    input::placeholder, textarea::placeholder {
+      color: var(--silver);
+    }
+    .btn-whatsapp-submit {
+      background: #25D366;
+      color: white;
+      border: none;
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 40px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 1rem;
+    }
+    .btn-whatsapp-submit:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+    }
+    .whatsapp-note {
+      font-size: 0.7rem;
+      text-align: center;
+      margin-top: 0.8rem;
+      color: var(--silver);
+    }
+    footer {
+      background: var(--navy-dark);
+      color: var(--silver);
+      text-align: center;
+      padding: 1.8rem;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      border-top: 1px solid var(--medium-blue);
+    }
+
+    @media (max-width: 780px) {
+      .hero-content h1 { font-size: 2.1rem; }
+      .container { padding: 0 1.3rem; }
+      nav { flex-direction: column; text-align: center; }
+      .nav-links { gap: 1rem; justify-content: center; flex-wrap: wrap; }
+      .section-title:after { left: 50%; transform: translateX(-50%); width: 60px; }
+      .section-title { text-align: center; display: block; }
+      .contact-flex { flex-direction: column; }
+    }
+  </style>
 </head>
-
 <body>
-
 <header>
-<h1>Thandokazi Nomvelo Phunzana</h1>
-<p><b>Computer Science Graduate | Software Developer</b></p>
-<p>Email: nomvelo.phunzana@gmail.com | Phone: 072 392 5239</p>
-<p>
-LinkedIn:
-<a href="https://www.linkedin.com/in/thandokazi-phunzana-73a780239" target="_blank" style="color:white;">
-View Profile
-</a>
-</p>
+  <div class="container">
+    <nav>
+      <div class="logo">Thandokazi <span>Phunzana</span></div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a id="navDownloadBtn" class="btn-download-nav" href="https://raw.githubusercontent.com/Thandokazi-Phunzana/thandokazi-portfolio/main/CV_Intern.pdf" download="Thandokazi_Phunzana_CV.pdf">
+        <i class="fas fa-file-pdf"></i> Download CV
+      </a>
+    </nav>
+  </div>
 </header>
 
-<section>
-<h2>👩‍💻 Personal Details</h2>
-<div class="card">
-<p><b>Full Name:</b> Thandokazi Nomvelo Phunzana</p>
-<p><b>Location:</b> KwaZulu-Natal, South Africa</p>
-<p><b>Nationality:</b> South African</p>
-<p><b>Career Goal:</b> To grow as a software developer and contribute innovative solutions using technology.</p>
-</div>
-</section>
+<main>
+  <!-- Hero Section -->
+  <section id="home">
+    <div class="container hero">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-code"></i> Open for Internship / Graduate Roles</div>
+        <h1>Hi, I'm <span class="gradient-name">Thandokazi</span><br>Software Developer</h1>
+        <p>Computer Science graduate from UKZN with tutoring experience, game dev leadership, and a passion for clean code & problem-solving.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn-outline">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="avatar-circle">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-<h2>🎓 Education</h2>
-<div class="card">
-<p><b>Qualification:</b> Bachelor of Science in Computer Science</p>
-<p><b>Institution:</b> University of KwaZulu-Natal</p>
-<p><b>Status:</b> Graduate</p>
-<p><b>Key Modules:</b> Programming, Data Structures, Artificial Intelligence, Software Engineering, Databases</p>
-</div>
-</section>
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>I'm <strong>Thandokazi Nomvelo Phunzana</strong>, a passionate software developer with a BSc in Computer Science & IT from the University of KwaZulu-Natal (Dec 2025). I thrive on turning complex ideas into functional, elegant software.</p>
+          <p>During my academic journey, I tutored multiple CS modules — from Foundations of Programming to Data Structures — helping students excel. I also led a team to develop a 3D game in Unity (C#) and built a story-driven quiz game with C++/SFML. I'm now seeking an internship to apply my technical skills and grow within a dynamic team.</p>
+          <div class="info-bubbles">
+            <div class="info-bubble"><i class="fas fa-map-marker-alt"></i> Durban, South Africa</div>
+            <div class="info-bubble"><i class="fas fa-graduation-cap"></i> BSc CS & IT, UKZN</div>
+            <div class="info-bubble"><i class="fas fa-trophy"></i> Distinctions: Math235, Math140</div>
+          </div>
+        </div>
+        <div class="stats-mini">
+          <div class="stat-item"><div class="stat-number">4+</div><div>Tutoring Contracts</div></div>
+          <div class="stat-item"><div class="stat-number">5+</div><div>Programming Languages</div></div>
+          <div class="stat-item"><div class="stat-number">100%</div><div>Commitment & Dedication</div></div>
+        </div>
+      </div>
+      
+      <!-- CV DOWNLOAD BUTTON -->
+      <div class="cv-download-section">
+        <a id="downloadCVBtn" class="btn-download-cv" href="https://raw.githubusercontent.com/Thandokazi-Phunzana/thandokazi-portfolio/main/CV_Intern.pdf" download="Thandokazi_Phunzana_CV.pdf">
+          <i class="fas fa-file-pdf"></i> Download My CV (PDF)
+          <i class="fas fa-download"></i>
+        </a>
+        <p style="font-size: 0.75rem; margin-top: 0.6rem; color: var(--silver);">Click to download my complete CV with experience, education and qualifications</p>
+      </div>
+    </div>
+  </section>
 
-<section>
-<h2>🚀 Projects</h2>
-<div class="card">
-<p>
-All my academic and personal projects are available on my GitHub profile,
-including source code, demos, and documentation.
-</p>
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-wrapper">
+        <div class="skill-card">
+          <h3><i class="fas fa-code"></i> Languages</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">C++</span><span class="skill-tag">C#</span><span class="skill-tag">Java</span>
+            <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">HTML/CSS</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3><i class="fas fa-database"></i> Databases & Tools</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span><span class="skill-tag">Git/GitHub</span><span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Unity</span><span class="skill-tag">Blender</span><span class="skill-tag">SFML</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <h3><i class="fas fa-brain"></i> Core CS</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">OOP</span><span class="skill-tag">Data Structures</span><span class="skill-tag">Algorithms</span>
+            <span class="skill-tag">SDLC</span><span class="skill-tag">System Design</span><span class="skill-tag">Debugging</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p>
-🔗 <b>GitHub Profile:</b><br>
-<a href="https://github.com/Thandokazi-Phunzana" target="_blank">
-View My Projects
-</a>
-</p>
+  <!-- Projects with GitHub links -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-gamepad"></i></div>
+          <div class="project-info">
+            <h3>Story Driven Quiz Game</h3>
+            <p>C++ & SFML narrative quiz with 3 difficulty levels, branching map system. Led UML design & system planning.</p>
+            <div class="project-tech"><span>C++</span><span>SFML</span><span>OOP</span></div>
+            <div class="project-links">
+              <a href="https://github.com/Thandokazi-Phunzana/Story-Quiz-Game" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+              <a href="https://github.com/Thandokazi-Phunzana" target="_blank"><i class="fab fa-github"></i> My GitHub Profile</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-cubes"></i></div>
+          <div class="project-info">
+            <h3>Vengeance (3D Game)</h3>
+            <p>Team Lead on Unity 3D shooter: third-person combat, enemy AI, Blender modeling & textures. Full dev cycle.</p>
+            <div class="project-tech"><span>C#</span><span>Unity</span><span>Blender</span></div>
+            <div class="project-links">
+              <a href="https://github.com/Thandokazi-Phunzana/Vengeance-Unity-Game" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+              <a href="https://github.com/Thandokazi-Phunzana" target="_blank"><i class="fab fa-github"></i> My GitHub Profile</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-database"></i></div>
+          <div class="project-info">
+            <h3>SQL Library System</h3>
+            <p>Relational database design, complex queries, normalization for digital library management.</p>
+            <div class="project-tech"><span>MySQL</span><span>RDBMS</span><span>SQL</span></div>
+            <div class="project-links">
+              <a href="https://github.com/Thandokazi-Phunzana/Library-DBMS" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
+              <a href="https://github.com/Thandokazi-Phunzana" target="_blank"><i class="fab fa-github"></i> My GitHub Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p><b>Highlighted Projects:</b></p>
-<ul>
-<li>Natural Language Processing Project (Python)</li>
-<li>C++ Quiz Game</li>
-<li>3D Game Development using Unity (C#)</li>
-</ul>
-</div>
-</section>
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Tutor - Data Structures (COMP 201)</h3>
+          <div class="timeline-date">Aug 2025 – Nov 2025 | UKZN</div>
+          <p>Assisted second-year students, invigilated tests, marked practicals, and reinforced DSA concepts.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Tutor - Computer Organization (COMP 204)</h3>
+          <div class="timeline-date">Aug 2024 – Nov 2024 | UKZN</div>
+          <p>Supported computer architecture understanding, continuous lab assistance and marking.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Tutor - Intro to Programming (COMP 100)</h3>
+          <div class="timeline-date">Mar 2024 – May 2024 | UKZN</div>
+          <p>Guided first-years in programming fundamentals, debugging, and problem-solving strategies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-<h2>📞 References</h2>
-<div class="card">
-<p><b>Dr Edgar Jembere</b> – Lecturer<br>
-Phone: 031 260 1035</p>
+  <!-- Education Section (with Matric) -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Bachelor of Science in Computer Science & Information Technology</h3>
+          <div class="timeline-date">2022 – 2025</div>
+          <div class="timeline-institution">University of KwaZulu-Natal (UKZN)</div>
+          <p>Graduated December 2025. Distinctions in Mathematics (Math235, Math140). Strong foundation in software development, algorithms, and databases.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>National Senior Certificate (Matric)</h3>
+          <div class="timeline-date">2021</div>
+          <div class="timeline-institution">Mbopha High School</div>
+          <p>Bachelor's Degree Pass with Distinctions in:</p>
+          <ul>
+            <li>Agricultural Sciences</li>
+            <li>IsiZulu Home Language</li>
+            <li>Life Sciences</li>
+            <li>Life Orientation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p><b>Mr Sibonelo Dlamini</b> – Tutor Supervisor<br>
-Phone: 031 260 7513</p>
-</div>
-</section>
+  <!-- Achievements & Languages -->
+  <section id="achievements">
+    <div class="container">
+      <h2 class="section-title">Achievements & More</h2>
+      <div class="achievement-grid">
+        <div class="achievement-box">
+          <h3><i class="fas fa-award"></i> Honors & Awards</h3>
+          <ul>
+            <li><i class="fas fa-star"></i> Bachelor of Science in Computer Science (Dec 2025)</li>
+            <li><i class="fas fa-star"></i> UKZN Distinctions: Math235, Math140</li>
+            <li><i class="fas fa-star"></i> Matric Bachelor's pass with multiple distinctions</li>
+            <li><i class="fas fa-trophy"></i> Team Lead: Vengeance 3D Game Project</li>
+          </ul>
+        </div>
+        <div class="achievement-box">
+          <h3><i class="fas fa-language"></i> Languages</h3>
+          <ul>
+            <li><i class="fas fa-comment"></i> English (Fluent)</li>
+            <li><i class="fas fa-comment"></i> IsiZulu (Native)</li>
+          </ul>
+          <h3 style="margin-top: 1.2rem;"><i class="fas fa-user-check"></i> References</h3>
+          <ul>
+            <li><i class="fas fa-chalkboard-user"></i> Dr Edgar Jembere – UKZN Lecturer | 031 260 1035</li>
+            <li><i class="fas fa-chalkboard-user"></i> Mr Sibonelo Dlamini – Tutor Supervisor | 031 260 7513</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-<p>© 2026 Thandokazi Nomvelo Phunzana | Portfolio</p>
-</footer>
-
-</body>
-</html>
+  <!-- Contact with WhatsApp Form -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Let's Connect</h2>
+      <div class="contact-flex">
+        <div class="contact-info">
+          <h3>Open to opportunities</h3>
+          <p>I'm actively looking for an internship or graduate developer role. Let's build something great together.</p>
+          <div class="contact-details">
+            <p><i class="fas fa-phone-alt"></i> +27 67 999 6934</p>
+            <p><i class="fab fa-whatsapp"></i> +27 67 999 6934</p>
+            <p><i class="fas fa-envelope"></i> nomvelo.phunzana@gmail.com</p>
+            <p><i class="fab fa-github"></i> <a href="https://github.com/Thandokazi-Phunzana" target="_blank">github.com/Thandokazi-Phunzana</a></p>
+            <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/thandokazi-phunzana-73a780239" target="_blank">linkedin.com/in/thandokazi-phunzana</a></p>
+          </div>
+          <div class="social-links">
+            <a href="https://github.com/Thandokazi-Phunzana" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/thandokazi-phunzana-73a780239" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:nomvelo.phunzana@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/27679996934" target="_blank"><i class="fab fa-whatsapp"></i></a
